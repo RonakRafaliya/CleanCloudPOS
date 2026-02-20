@@ -1,0 +1,2713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanCloud POS System - Feature Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 3px solid #1a73e8;git 
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1a73e8;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        h4 {
+            color: #555;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #1a73e8;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .header-info {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .header-info p {
+            margin: 5px 0;
+        }
+        .toc {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .toc ol {
+            margin: 0;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        .description-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-left: 4px solid #4caf50;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .description-box strong {
+            color: #2e7d32;
+        }
+        .use-case {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-left: 4px solid #ff9800;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .use-case strong {
+            color: #e65100;
+        }
+        .benefit-box {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #2196f3;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .benefit-box strong {
+            color: #1565c0;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        strong {
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CleanCloud POS System - Feature Documentation</h1>
+
+<div class="header-info">
+    <p><strong>Document Version:</strong> 1.1</p>
+    <p><strong>Date:</strong> February 19, 2026</p>
+    <p><strong>Prepared By:</strong> Project Management Team</p>
+    <p><strong>Client Reference:</strong> CleanCloud (<a href="https://cleancloudapp.com/">https://cleancloudapp.com/</a>)</p>
+</div>
+
+<hr>
+
+<div class="toc">
+<h2>Table of Contents</h2>
+<ol>
+    <li><a href="#section1">Executive Summary</a></li>
+    <li><a href="#section2">System Overview</a></li>
+    <li><a href="#section3">Module 1: Point of Sale (POS)</a></li>
+    <li><a href="#section4">Module 2: Order Management</a></li>
+    <li><a href="#section5">Module 3: Cleaning Workflow</a></li>
+    <li><a href="#section6">Module 4: Machine Management</a></li>
+    <li><a href="#section7">Module 5: Ready/Pickup Management</a></li>
+    <li><a href="#section8">Module 6: Search & Filtering</a></li>
+    <li><a href="#section9">Module 7: Invoice & Billing</a></li>
+    <li><a href="#section10">Module 8: Metrics & Reporting</a></li>
+    <li><a href="#section11">Module 9: Product Management</a></li>
+    <li><a href="#section12">Module 10: Hardware Integration</a></li>
+    <li><a href="#section13">Module 11: User Management</a></li>
+    <li><a href="#section14">Module 12: Marketing</a></li>
+    <li><a href="#section15">System Flow Diagrams</a></li>
+    <li><a href="#section16">Technical Requirements</a></li>
+</ol>
+</div>
+
+<hr>
+
+<h2 id="section1">1. Executive Summary</h2>
+
+<div class="description-box">
+    <strong>What is CleanCloud?</strong><br>
+    CleanCloud is a comprehensive Point of Sale (POS) and business management platform designed specifically for laundromats, dry cleaners, alterations, and shoe cleaning businesses. The system provides end-to-end solutions for managing orders, tracking cleaning workflows, processing payments, generating reports, and managing customer relationships.
+</div>
+
+<div class="use-case">
+    <strong>Who Should Use This System?</strong><br>
+    <ul>
+        <li><strong>Laundromat Owners:</strong> Manage wash-dry-fold services, self-service machines, and retail products</li>
+        <li><strong>Dry Cleaning Businesses:</strong> Track garments through the cleaning process with detailed item tagging</li>
+        <li><strong>Alteration Shops:</strong> Manage custom orders with specific customer requirements</li>
+        <li><strong>Multi-Location Operators:</strong> Centralize management across multiple stores</li>
+    </ul>
+</div>
+
+<h3>Key Business Objectives</h3>
+
+<table>
+    <tr>
+        <th>Objective</th>
+        <th>Description</th>
+        <th>Business Benefit</th>
+    </tr>
+    <tr>
+        <td>Streamline Checkout</td>
+        <td>Fast, intuitive POS interface for quick order processing</td>
+        <td>Reduce customer wait times by up to 50%</td>
+    </tr>
+    <tr>
+        <td>Order Lifecycle Tracking</td>
+        <td>Track orders from drop-off to pickup through every stage</td>
+        <td>Eliminate lost items and improve accountability</td>
+    </tr>
+    <tr>
+        <td>Multi-Category Management</td>
+        <td>Handle WDF, Retail, Household, and Subscription products</td>
+        <td>Diversify revenue streams in one system</td>
+    </tr>
+    <tr>
+        <td>Business Analytics</td>
+        <td>Comprehensive reporting on sales, customers, and operations</td>
+        <td>Data-driven decisions for growth</td>
+    </tr>
+    <tr>
+        <td>Hardware Integration</td>
+        <td>Connect printers, scales, scanners, and payment terminals</td>
+        <td>Seamless operations without manual entry</td>
+    </tr>
+    <tr>
+        <td>Multi-Store Management</td>
+        <td>Centralized control for multiple locations</td>
+        <td>Scale business efficiently</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section2">2. System Overview</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The system overview provides a high-level understanding of how CleanCloud is organized. The main navigation gives quick access to daily operations, while the side menu provides access to configuration and reporting features.
+</div>
+
+<h3>2.1 Main Navigation Structure</h3>
+
+<div class="use-case">
+    <strong>Why This Navigation?</strong><br>
+    The main navigation is designed for speed during busy hours. Staff can quickly switch between creating new orders, managing cleaning queues, monitoring machines, and handling pickups without navigating through menus.
+</div>
+
+<table>
+    <tr>
+        <th>Module</th>
+        <th>Description</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>New Order</strong></td>
+        <td>Create new customer orders</td>
+        <td>When a customer drops off laundry or purchases items</td>
+    </tr>
+    <tr>
+        <td><strong>Cleaning</strong></td>
+        <td>Manage cleaning queue</td>
+        <td>Track which orders need to be cleaned and mark them complete</td>
+    </tr>
+    <tr>
+        <td><strong>Machines</strong></td>
+        <td>Track washer/dryer status</td>
+        <td>Monitor machine availability and assign orders to machines</td>
+    </tr>
+    <tr>
+        <td><strong>Ready</strong></td>
+        <td>Ready for pickup</td>
+        <td>View completed orders waiting for customer pickup</td>
+    </tr>
+</table>
+
+<h3>2.2 Side Menu Modules</h3>
+
+<div class="use-case">
+    <strong>Why Side Menu?</strong><br>
+    Side menu modules are for less frequent but equally important tasks like searching historical orders, generating invoices, viewing reports, and configuring the system. These are typically used by managers or during slower periods.
+</div>
+
+<table>
+    <tr>
+        <th>Module</th>
+        <th>Description</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>Search</strong></td>
+        <td>Advanced search for orders, customers, payments</td>
+        <td>Find a specific order when customer asks about status, locate customer history</td>
+    </tr>
+    <tr>
+        <td><strong>Invoice</strong></td>
+        <td>Invoice generation and management</td>
+        <td>Create invoices for business accounts, send monthly statements</td>
+    </tr>
+    <tr>
+        <td><strong>Metrics</strong></td>
+        <td>Business analytics and reporting dashboard</td>
+        <td>Review daily sales, track performance trends, identify top products</td>
+    </tr>
+    <tr>
+        <td><strong>Products</strong></td>
+        <td>Product catalog management</td>
+        <td>Add new services, update prices, manage inventory</td>
+    </tr>
+    <tr>
+        <td><strong>Hardware</strong></td>
+        <td>Hardware device configuration</td>
+        <td>Set up printers, scales, barcode scanners, payment terminals</td>
+    </tr>
+    <tr>
+        <td><strong>Users</strong></td>
+        <td>Staff management and permissions</td>
+        <td>Add employees, set access levels, track hours and payroll</td>
+    </tr>
+    <tr>
+        <td><strong>Marketing</strong></td>
+        <td>Customer engagement tools</td>
+        <td>Send promotional emails/SMS, track advertising campaigns</td>
+    </tr>
+    <tr>
+        <td><strong>Admin</strong></td>
+        <td>System administration settings</td>
+        <td>Configure store settings, tax rates, business hours</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section3">3. Module 1: Point of Sale (POS)</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The POS module is the heart of daily operations. It's the primary interface staff use to create orders, add items, select customers, and process payments. A well-designed POS reduces training time and speeds up customer service.
+</div>
+
+<div class="benefit-box">
+    <strong>Key Benefits:</strong>
+    <ul>
+        <li>Intuitive interface reduces staff training time</li>
+        <li>Quick item selection with visual product buttons</li>
+        <li>Flexible payment options for customer convenience</li>
+        <li>Automatic calculations for pricing, taxes, and discounts</li>
+    </ul>
+</div>
+
+<h3>3.1 Feature Overview</h3>
+<p>The POS module is the primary interface for creating and processing customer orders. It supports multiple product categories, customer management, and various payment methods.</p>
+
+<h3>3.2 Product Categories</h3>
+
+<div class="use-case">
+    <strong>Why Multiple Categories?</strong><br>
+    Different product types require different pricing models and workflows. WDF is priced by weight, retail items are per-unit, and subscriptions are recurring. Separating categories ensures accurate pricing and proper workflow routing.
+</div>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Pricing Type</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>WDF (Wash, Dry, Fold)</strong></td>
+        <td>Laundry services by weight</td>
+        <td>Weight-based ($/lb)</td>
+        <td>Customer drops off a bag of laundry; staff weighs it and charges per pound</td>
+    </tr>
+    <tr>
+        <td><strong>Retail</strong></td>
+        <td>Retail products (bags, detergents, softeners)</td>
+        <td>Per item</td>
+        <td>Customer wants to buy a laundry bag or detergent to take home</td>
+    </tr>
+    <tr>
+        <td><strong>Household</strong></td>
+        <td>Household items (blankets, pillows, comforters)</td>
+        <td>Per item</td>
+        <td>Customer brings in a comforter or blanket for cleaning</td>
+    </tr>
+    <tr>
+        <td><strong>Subscription Products</strong></td>
+        <td>Recurring service plans</td>
+        <td>Subscription-based</td>
+        <td>Regular customer signs up for weekly laundry service at discounted rate</td>
+    </tr>
+</table>
+
+<h3>3.3 WDF Section Features</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    WDF (Wash, Dry, Fold) is the core service for most laundromats. This section allows staff to select service types, record weights, and add special handling instructions.
+</div>
+
+<h4>3.3.1 Service Types</h4>
+
+<table>
+    <tr>
+        <th>Service Type</th>
+        <th>Description</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td><strong>Fragrance Free</strong></td>
+        <td>No scented detergents or softeners</td>
+        <td>Customers with allergies or scent sensitivity</td>
+    </tr>
+    <tr>
+        <td><strong>Hypoallergenic</strong></td>
+        <td>Gentle detergents for sensitive skin</td>
+        <td>Customers with skin conditions or babies' clothes</td>
+    </tr>
+    <tr>
+        <td><strong>Premium</strong></td>
+        <td>High-quality detergents and extra care</td>
+        <td>Customers willing to pay more for better treatment</td>
+    </tr>
+    <tr>
+        <td><strong>Standard</strong></td>
+        <td>Regular wash service</td>
+        <td>Default option for most customers</td>
+    </tr>
+    <tr>
+        <td><strong>Laundry by Bag</strong></td>
+        <td>Fixed price per bag regardless of weight</td>
+        <td>Promotional offers or simplified pricing</td>
+    </tr>
+</table>
+
+<h4>3.3.2 Custom Photo Upload</h4>
+
+<div class="use-case">
+    <strong>Why Photo Documentation?</strong><br>
+    Photos protect both the business and customer by documenting the condition of items before cleaning. This prevents disputes about pre-existing damage and provides visual reference for special handling requirements.
+</div>
+
+<ul>
+    <li><strong>Photo documentation capability:</strong> Take photos of special items, stains, or damage before cleaning</li>
+    <li><strong>Visual reference:</strong> Staff can refer to photos during cleaning to ensure proper treatment</li>
+    <li><strong>Dispute resolution:</strong> Photos serve as evidence if customer claims damage occurred during cleaning</li>
+</ul>
+
+<h3>3.4 Retail Section</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The Retail section allows laundromats to sell additional products like detergents, laundry bags, and accessories. This creates an additional revenue stream and provides convenience for customers.
+</div>
+
+<h4>3.4.1 Product Sub-categories</h4>
+
+<table>
+    <tr>
+        <th>Sub-category</th>
+        <th>Products</th>
+        <th>Business Benefit</th>
+    </tr>
+    <tr>
+        <td><strong>Branded Laundry Bags</strong></td>
+        <td>Large, Medium sizes</td>
+        <td>Promotes brand awareness; customers carry your logo</td>
+    </tr>
+    <tr>
+        <td><strong>Detergents</strong></td>
+        <td>Ariel, ECOS, Foca, Gain, Persil</td>
+        <td>High-margin products; convenience for customers</td>
+    </tr>
+    <tr>
+        <td><strong>Fabric Softeners</strong></td>
+        <td>Bounce, Downy, Ecover</td>
+        <td>Complementary product to detergents</td>
+    </tr>
+    <tr>
+        <td><strong>Other</strong></td>
+        <td>Hangers, Mothballs, Bleach, Dryer Sheets</td>
+        <td>Complete product offering for laundry needs</td>
+    </tr>
+</table>
+
+<h3>3.5 Household Section</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Household items require special handling due to their size and material. This section provides specific pricing for large items that don't fit the standard weight-based model.
+</div>
+
+<h4>3.5.1 Product Types</h4>
+
+<table>
+    <tr>
+        <th>Product Type</th>
+        <th>Variants</th>
+        <th>Special Considerations</th>
+    </tr>
+    <tr>
+        <td><strong>Throw Blankets</strong></td>
+        <td>Standard size</td>
+        <td>Quick turnaround; can be washed with regular loads</td>
+    </tr>
+    <tr>
+        <td><strong>Pillows</strong></td>
+        <td>Small, Large, Pillow Case</td>
+        <td>Require gentle cycle; longer drying time</td>
+    </tr>
+    <tr>
+        <td><strong>Comforters</strong></td>
+        <td>Double, King, Queen, Single</td>
+        <td>Large capacity machines required; premium pricing</td>
+    </tr>
+    <tr>
+        <td><strong>Bed Sheets</strong></td>
+        <td>Large, Medium, Small</td>
+        <td>Can be bundled; ironing may be offered</td>
+    </tr>
+</table>
+
+<h3>3.6 Subscription Products</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Subscription plans create predictable recurring revenue and customer loyalty. Customers commit to regular service in exchange for discounted rates, ensuring steady business flow.
+</div>
+
+<div class="benefit-box">
+    <strong>Business Benefits of Subscriptions:</strong>
+    <ul>
+        <li>Predictable monthly revenue</li>
+        <li>Increased customer retention</li>
+        <li>Better capacity planning (know expected volume)</li>
+        <li>Higher customer lifetime value</li>
+    </ul>
+</div>
+
+<h4>3.6.1 Available Plans</h4>
+
+<table>
+    <tr>
+        <th>Plan Name</th>
+        <th>Weight Limit</th>
+        <th>Target Customer</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>Light Plan</strong></td>
+        <td>20 lbs/week</td>
+        <td>Singles, students</td>
+        <td>Individual with minimal laundry needs</td>
+    </tr>
+    <tr>
+        <td><strong>Standard Plan</strong></td>
+        <td>35 lbs/week</td>
+        <td>Couples, professionals</td>
+        <td>Working professionals with regular laundry</td>
+    </tr>
+    <tr>
+        <td><strong>Family Plan</strong></td>
+        <td>50 lbs/week</td>
+        <td>Families with children</td>
+        <td>Households with 3-5 members</td>
+    </tr>
+    <tr>
+        <td><strong>Premium Unlimited</strong></td>
+        <td>500 lbs/month max</td>
+        <td>Large families, small businesses</td>
+        <td>High-volume customers needing flexibility</td>
+    </tr>
+</table>
+
+<h3>3.7 Payment Panel Features</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The payment panel provides flexibility in how and when customers pay. Supporting multiple payment methods and timing options (pay now vs. pay later) accommodates different customer preferences and business models.
+</div>
+
+<h4>3.7.1 Payment Options</h4>
+
+<table>
+    <tr>
+        <th>Payment Option</th>
+        <th>Description</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td><strong>Pay All Orders</strong></td>
+        <td>Toggle to pay multiple orders at once</td>
+        <td>Customer has multiple pending orders and wants to settle all</td>
+    </tr>
+    <tr>
+        <td><strong>Pay on Collection</strong></td>
+        <td>Customer pays when picking up</td>
+        <td>Standard drop-off service; payment deferred until pickup</td>
+    </tr>
+    <tr>
+        <td><strong>Pay by Cash</strong></td>
+        <td>Cash payment processing</td>
+        <td>Customer prefers cash; opens cash drawer</td>
+    </tr>
+    <tr>
+        <td><strong>Pay by Card</strong></td>
+        <td>Credit/debit card processing</td>
+        <td>Most common payment method; integrates with terminal</td>
+    </tr>
+    <tr>
+        <td><strong>Pay by Check</strong></td>
+        <td>Check payment recording</td>
+        <td>Business accounts or customers without cards</td>
+    </tr>
+    <tr>
+        <td><strong>Invoice/On Account</strong></td>
+        <td>Bill to customer account</td>
+        <td>Business accounts with monthly billing arrangements</td>
+    </tr>
+</table>
+
+<h4>3.7.2 Notification Options</h4>
+
+<div class="use-case">
+    <strong>Why Multiple Notification Methods?</strong><br>
+    Different customers prefer different communication channels. Offering SMS, email, or both ensures customers receive timely updates about their orders, reducing "where's my order" calls.
+</div>
+
+<table>
+    <tr>
+        <th>Option</th>
+        <th>Description</th>
+        <th>Best For</th>
+    </tr>
+    <tr>
+        <td><strong>Notify by SMS</strong></td>
+        <td>Text message notification</td>
+        <td>Customers who check texts frequently; immediate alerts</td>
+    </tr>
+    <tr>
+        <td><strong>Notify by Email</strong></td>
+        <td>Email notification</td>
+        <td>Customers who prefer email; includes detailed receipt</td>
+    </tr>
+    <tr>
+        <td><strong>Notify by SMS & Email</strong></td>
+        <td>Both channels</td>
+        <td>Important orders; ensures message is received</td>
+    </tr>
+    <tr>
+        <td><strong>Do Not Notify</strong></td>
+        <td>No automatic notification</td>
+        <td>Walk-in customers who will wait; privacy-conscious customers</td>
+    </tr>
+</table>
+
+<h4>3.7.3 Order Features</h4>
+
+<table>
+    <tr>
+        <th>Feature</th>
+        <th>Description</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>Subtotal calculation</strong></td>
+        <td>Automatic sum of all items</td>
+        <td>Shows customer running total before discounts</td>
+    </tr>
+    <tr>
+        <td><strong>Discount application</strong></td>
+        <td>Percentage-based discounts</td>
+        <td>Apply customer loyalty discount or promotional offer</td>
+    </tr>
+    <tr>
+        <td><strong>Promo code support</strong></td>
+        <td>Enter promotional codes</td>
+        <td>Customer has coupon from marketing campaign</td>
+    </tr>
+    <tr>
+        <td><strong>Total calculation</strong></td>
+        <td>Final amount with tax</td>
+        <td>Shows exact amount customer will pay</td>
+    </tr>
+    <tr>
+        <td><strong>Reset Order</strong></td>
+        <td>Clear all items and start over</td>
+        <td>Mistake was made; need to start fresh</td>
+    </tr>
+    <tr>
+        <td><strong>Express service toggle</strong></td>
+        <td>Mark order as priority</td>
+        <td>Customer needs rush service; willing to pay premium</td>
+    </tr>
+</table>
+
+<h3>3.8 Custom Item Entry</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Sometimes customers bring items that don't fit predefined categories. Custom item entry allows staff to create one-off items with custom pricing, ensuring no business is turned away.
+</div>
+
+<p><strong>Modal: "Describe an Item"</strong></p>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>Text input</td>
+        <td>Describe the custom item (e.g., "Wedding Dress Cleaning")</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>Numeric</td>
+        <td>How many of this item</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>Per item</td>
+        <td>Custom price for this specific item</td>
+    </tr>
+    <tr>
+        <td>Pieces</td>
+        <td>Per item</td>
+        <td>Number of pieces (for tracking purposes)</td>
+    </tr>
+    <tr>
+        <td>Section</td>
+        <td>Dropdown</td>
+        <td>Categorize for reporting (WDF, Retail, Household)</td>
+    </tr>
+    <tr>
+        <td>Tax Exempt</td>
+        <td>Checkbox</td>
+        <td>Mark if item is not subject to sales tax</td>
+    </tr>
+</table>
+
+<h3>3.9 Weight Entry System</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    For WDF services, accurate weight recording is essential for correct pricing. The weight entry system can integrate with digital scales for automatic reading or allow manual entry.
+</div>
+
+<p><strong>Modal: "Enter Weight"</strong></p>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Purpose</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>Weight input</strong></td>
+        <td>Record laundry weight</td>
+        <td>Enter weight from scale (manual or automatic)</td>
+    </tr>
+    <tr>
+        <td><strong>Notes</strong></td>
+        <td>Special instructions</td>
+        <td>"Separate whites" or "Cold water only"</td>
+    </tr>
+    <tr>
+        <td><strong>Bags count</strong></td>
+        <td>Number of bags</td>
+        <td>Track how many bags customer dropped off</td>
+    </tr>
+    <tr>
+        <td><strong>Wet Weight toggle</strong></td>
+        <td>Indicate if weighed wet</td>
+        <td>Adjust pricing if items were wet when weighed</td>
+    </tr>
+    <tr>
+        <td><strong>Reset button</strong></td>
+        <td>Clear and re-weigh</td>
+        <td>Scale error or need to re-weigh</td>
+    </tr>
+    <tr>
+        <td><strong>Next Bag</strong></td>
+        <td>Add another bag</td>
+        <td>Customer has multiple bags with different weights</td>
+    </tr>
+</table>
+
+<h3>3.10 Customer Management</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Customer profiles store contact information, preferences, and history. This enables personalized service, targeted marketing, and efficient order processing for returning customers.
+</div>
+
+<div class="benefit-box">
+    <strong>Benefits of Customer Profiles:</strong>
+    <ul>
+        <li>Quick checkout for returning customers</li>
+        <li>Automatic application of customer discounts</li>
+        <li>Track customer preferences and notes</li>
+        <li>Enable marketing campaigns and loyalty programs</li>
+        <li>Generate customer-specific reports</li>
+    </ul>
+</div>
+
+<h4>3.10.1 Add Customer Modal</h4>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>Text</td>
+        <td>Customer identification</td>
+    </tr>
+    <tr>
+        <td>Tel</td>
+        <td>Phone</td>
+        <td>Primary contact for notifications</td>
+    </tr>
+    <tr>
+        <td>Secondary Tel</td>
+        <td>Phone</td>
+        <td>Backup contact number</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>Email</td>
+        <td>For receipts, invoices, and marketing</td>
+    </tr>
+    <tr>
+        <td>Street Address</td>
+        <td>Text with autocomplete</td>
+        <td>For delivery services</td>
+    </tr>
+    <tr>
+        <td>Apt Number</td>
+        <td>Text</td>
+        <td>Apartment/unit for deliveries</td>
+    </tr>
+    <tr>
+        <td>City, State, Zip</td>
+        <td>Text/Dropdown</td>
+        <td>Complete address for deliveries</td>
+    </tr>
+    <tr>
+        <td>Notes</td>
+        <td>Textarea</td>
+        <td>Visible notes (e.g., "Prefers light starch")</td>
+    </tr>
+    <tr>
+        <td>Private Notes</td>
+        <td>Textarea</td>
+        <td>Internal notes not shown to customer</td>
+    </tr>
+    <tr>
+        <td>Marketing Opt-In</td>
+        <td>Dropdown</td>
+        <td>Permission for promotional communications</td>
+    </tr>
+    <tr>
+        <td>Invoice Style</td>
+        <td>Dropdown</td>
+        <td>Preferred invoice format</td>
+    </tr>
+    <tr>
+        <td>Payment Type</td>
+        <td>Dropdown</td>
+        <td>Default payment method</td>
+    </tr>
+    <tr>
+        <td>Discount (%)</td>
+        <td>Percentage</td>
+        <td>Automatic discount for loyal customers</td>
+    </tr>
+    <tr>
+        <td>Credit</td>
+        <td>Currency</td>
+        <td>Store credit balance</td>
+    </tr>
+    <tr>
+        <td>Tax Exempt</td>
+        <td>Checkbox</td>
+        <td>For tax-exempt organizations</td>
+    </tr>
+</table>
+
+<h3>3.11 Order Date Selection</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Setting accurate ready dates helps manage customer expectations and staff workload. The calendar picker allows scheduling future orders and setting realistic due dates based on current capacity.
+</div>
+
+<table>
+    <tr>
+        <th>Feature</th>
+        <th>Purpose</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>Calendar picker</strong></td>
+        <td>Select ready date</td>
+        <td>Choose when order will be ready</td>
+    </tr>
+    <tr>
+        <td><strong>Time selection</strong></td>
+        <td>Set specific pickup time</td>
+        <td>Customer needs order by specific time</td>
+    </tr>
+    <tr>
+        <td><strong>Schedule future orders</strong></td>
+        <td>Book in advance</td>
+        <td>Customer planning ahead for special event</td>
+    </tr>
+    <tr>
+        <td><strong>Due date management</strong></td>
+        <td>Track deadlines</td>
+        <td>Ensure orders are completed on time</td>
+    </tr>
+</table>
+
+<h3>3.12 Item Detailing</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Item detailing captures specific information about each garment or item. This includes color, existing damage, and stains. Proper documentation protects the business from false damage claims and ensures items receive appropriate treatment.
+</div>
+
+<h4>3.12.1 Quick Bar Options (Bottom of Screen)</h4>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Options</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Damage Tags</strong></td>
+        <td>Bubble, Button Broken, Button Missing, Collar Torn, Color Loss, Cuff Torn, Dye Transfer, Faded, Hole, Iron Mark, Iron Shine, Pilling Fabric, Snags, Tear, Torn, Worn Cuffs, Worn Collar</td>
+        <td>Document pre-existing damage before cleaning to avoid disputes</td>
+    </tr>
+    <tr>
+        <td><strong>Color Selection</strong></td>
+        <td>Full color palette</td>
+        <td>Identify garment color for sorting and tracking</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section4">4. Module 2: Order Management</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Order Management provides visibility into all orders in the system. Staff can view order details, edit orders, and track order status. This module is essential for handling customer inquiries and managing daily operations.
+</div>
+
+<h3>4.1 Order Cart Panel</h3>
+
+<div class="use-case">
+    <strong>Why a Cart Panel?</strong><br>
+    The cart panel shows a running summary of the current order being created. Staff can see all items, quantities, and prices at a glance, reducing errors and speeding up checkout.
+</div>
+
+<h4>4.1.1 Cart Display</h4>
+
+<table>
+    <tr>
+        <th>Element</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Item count badges</strong></td>
+        <td>Shows quantity of each item</td>
+        <td>Quick visual of order size</td>
+    </tr>
+    <tr>
+        <td><strong>Category indicator</strong></td>
+        <td>R = Retail, H = Household, W = WDF</td>
+        <td>Identify item type at a glance</td>
+    </tr>
+    <tr>
+        <td><strong>Individual pricing</strong></td>
+        <td>Price per item</td>
+        <td>Verify pricing before checkout</td>
+    </tr>
+    <tr>
+        <td><strong>Detailed notes</strong></td>
+        <td>Color, damage tags per item</td>
+        <td>Ensure special handling is noted</td>
+    </tr>
+</table>
+
+<h4>4.1.2 Order Summary</h4>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Pieces count</strong></td>
+        <td>Total number of pieces</td>
+        <td>Track volume for capacity planning</td>
+    </tr>
+    <tr>
+        <td><strong>Bags count</strong></td>
+        <td>Number of bags</td>
+        <td>Physical tracking of customer items</td>
+    </tr>
+    <tr>
+        <td><strong>Meet/Delivery indicator</strong></td>
+        <td>Pickup or delivery</td>
+        <td>Route planning for deliveries</td>
+    </tr>
+    <tr>
+        <td><strong>Quick Drop</strong></td>
+        <td>Fast drop-off option</td>
+        <td>Speed up check-in for regular customers</td>
+    </tr>
+    <tr>
+        <td><strong>Retail toggle</strong></td>
+        <td>Mark as retail-only order</td>
+        <td>Skip cleaning workflow for retail purchases</td>
+    </tr>
+    <tr>
+        <td><strong>Save functionality</strong></td>
+        <td>Save order in progress</td>
+        <td>Pause order to help another customer</td>
+    </tr>
+</table>
+
+<h3>4.2 Order Editing</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Order editing allows staff to modify orders after creation. This is necessary for adding forgotten items, correcting mistakes, or updating customer information. Proper controls prevent unauthorized changes.
+</div>
+
+<h4>4.2.1 Edit Order Banner</h4>
+
+<table>
+    <tr>
+        <th>Action</th>
+        <th>Description</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td><strong>"Editing #[ID]"</strong></td>
+        <td>Shows which order is being edited</td>
+        <td>Visual confirmation to prevent editing wrong order</td>
+    </tr>
+    <tr>
+        <td><strong>Copy into New Order</strong></td>
+        <td>Duplicate order</td>
+        <td>Customer wants same order as before</td>
+    </tr>
+    <tr>
+        <td><strong>Delete Order</strong></td>
+        <td>Remove order completely</td>
+        <td>Order was created in error (requires permission)</td>
+    </tr>
+    <tr>
+        <td><strong>Cancel editing</strong></td>
+        <td>Discard changes</td>
+        <td>Changed mind about modifications</td>
+    </tr>
+</table>
+
+<h4>4.2.2 Order Details Modal</h4>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Created</strong></td>
+        <td>Date, time, and elapsed time</td>
+        <td>Track how long order has been in system</td>
+    </tr>
+    <tr>
+        <td><strong>Payment</strong></td>
+        <td>Amount and status (Paid/Unpaid)</td>
+        <td>Verify payment before release</td>
+    </tr>
+    <tr>
+        <td><strong>Edited</strong></td>
+        <td>Yes/No indicator</td>
+        <td>Audit trail for modifications</td>
+    </tr>
+    <tr>
+        <td><strong>Customer</strong></td>
+        <td>Customer name</td>
+        <td>Verify correct customer</td>
+    </tr>
+    <tr>
+        <td><strong>Station</strong></td>
+        <td>Processing station ID</td>
+        <td>Track which station handled order</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section5">5. Module 3: Cleaning Workflow</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The Cleaning Workflow module tracks orders through the cleaning process. Staff can see which orders need to be cleaned, mark items as complete, and ensure nothing falls through the cracks. This is critical for maintaining quality and meeting deadlines.
+</div>
+
+<div class="benefit-box">
+    <strong>Key Benefits:</strong>
+    <ul>
+        <li>Visual queue of orders to be cleaned</li>
+        <li>Track progress through cleaning stages</li>
+        <li>Identify overdue or rush orders</li>
+        <li>Ensure quality control before marking complete</li>
+    </ul>
+</div>
+
+<h3>5.1 Cleaning Queue</h3>
+
+<h4>5.1.1 List View Columns</h4>
+
+<table>
+    <tr>
+        <th>Column</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>ID</strong></td>
+        <td>Order identifier</td>
+        <td>Unique reference for tracking</td>
+    </tr>
+    <tr>
+        <td><strong>Ready By</strong></td>
+        <td>Due date and time</td>
+        <td>Prioritize orders by deadline</td>
+    </tr>
+    <tr>
+        <td><strong>Customer</strong></td>
+        <td>Customer name</td>
+        <td>Identify whose order it is</td>
+    </tr>
+    <tr>
+        <td><strong>Order</strong></td>
+        <td>Item details with quantities</td>
+        <td>Know what needs to be cleaned</td>
+    </tr>
+    <tr>
+        <td><strong>Bags</strong></td>
+        <td>Number of bags</td>
+        <td>Physical tracking</td>
+    </tr>
+    <tr>
+        <td><strong>PCS</strong></td>
+        <td>Piece count</td>
+        <td>Verify all pieces are accounted for</td>
+    </tr>
+    <tr>
+        <td><strong>Notes</strong></td>
+        <td>Order notes</td>
+        <td>Special handling instructions</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td>Order total amount</td>
+        <td>Value of order for prioritization</td>
+    </tr>
+</table>
+
+<h4>5.1.2 Filter Options</h4>
+
+<div class="use-case">
+    <strong>Why Filters?</strong><br>
+    Filters help staff focus on specific orders. During busy periods, staff can filter to see only overdue orders or express orders that need immediate attention.
+</div>
+
+<p><strong>Report Types:</strong></p>
+<table>
+    <tr>
+        <th>Report</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>To Clean Report</td>
+        <td>All orders pending cleaning</td>
+    </tr>
+    <tr>
+        <td>To Clean Report (No dates)</td>
+        <td>Orders without due dates</td>
+    </tr>
+    <tr>
+        <td>Cleaned Today</td>
+        <td>Orders completed today</td>
+    </tr>
+    <tr>
+        <td>Cleaned Yesterday</td>
+        <td>Orders completed yesterday</td>
+    </tr>
+</table>
+
+<p><strong>Section Filters:</strong> WDF, Retail, Household, Subscription Products</p>
+
+<p><strong>Date Filters:</strong></p>
+<table>
+    <tr>
+        <th>Filter</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>Due Today</td>
+        <td>Orders that must be completed today</td>
+    </tr>
+    <tr>
+        <td>Due Today & Overdue</td>
+        <td>Urgent orders requiring immediate attention</td>
+    </tr>
+    <tr>
+        <td>Due Tomorrow</td>
+        <td>Plan for next day's workload</td>
+    </tr>
+    <tr>
+        <td>Overdue</td>
+        <td>Orders past their due date</td>
+    </tr>
+    <tr>
+        <td>Express Orders</td>
+        <td>Rush orders with premium pricing</td>
+    </tr>
+</table>
+
+<h3>5.2 Order Detail View</h3>
+
+<h4>5.2.1 Cleaning Checklist</h4>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The cleaning checklist ensures every item in an order is processed. Staff check off items as they're cleaned, providing accountability and preventing items from being missed.
+</div>
+
+<table>
+    <tr>
+        <th>Column</th>
+        <th>Type</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Item</strong></td>
+        <td>Product name</td>
+        <td>Identify what needs cleaning</td>
+    </tr>
+    <tr>
+        <td><strong>Notes</strong></td>
+        <td>Weight/specifications</td>
+        <td>Special handling requirements</td>
+    </tr>
+    <tr>
+        <td><strong>Cleaned</strong></td>
+        <td>Checkbox</td>
+        <td>Mark item as cleaned</td>
+    </tr>
+    <tr>
+        <td><strong>Split</strong></td>
+        <td>Checkbox</td>
+        <td>Split item into separate loads</td>
+    </tr>
+</table>
+
+<h4>5.2.2 Action Buttons</h4>
+
+<table>
+    <tr>
+        <th>Button</th>
+        <th>Purpose</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td><strong>Report Issue</strong></td>
+        <td>Flag problems with order</td>
+        <td>Found damage, stain won't come out, item missing</td>
+    </tr>
+    <tr>
+        <td><strong>Send Receipt</strong></td>
+        <td>Email/SMS receipt to customer</td>
+        <td>Customer requests copy of receipt</td>
+    </tr>
+    <tr>
+        <td><strong>Close (X)</strong></td>
+        <td>Close detail view</td>
+        <td>Return to queue list</td>
+    </tr>
+</table>
+
+<h3>5.3 First Order Identifier</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The yellow "1st" badge identifies first-time customers. This enables staff to provide extra attention and ensure a positive first experience, increasing the likelihood of repeat business.
+</div>
+
+<ul>
+    <li><strong>Yellow "1st" badge:</strong> Visual indicator on first-time customer orders</li>
+    <li><strong>Staff awareness:</strong> Helps staff identify new customers for special attention</li>
+    <li><strong>Quality focus:</strong> Ensures first impression is excellent</li>
+</ul>
+
+<hr>
+
+<h2 id="section6">6. Module 4: Machine Management</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Machine Management provides a visual Kanban board to track orders through the physical cleaning process. Staff can see which orders are in washers, dryers, or folding, and move them through stages as work progresses.
+</div>
+
+<h3>6.1 Kanban Board Interface</h3>
+
+<div class="use-case">
+    <strong>Why Kanban?</strong><br>
+    The Kanban board provides an intuitive visual representation of workflow. Staff can instantly see bottlenecks (too many orders in one stage) and balance workload across machines.
+</div>
+
+<p><strong>Workflow Stages:</strong></p>
+
+<table>
+    <tr>
+        <th>Stage</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td style="background-color: #ffecb3;"><strong>To-Do</strong></td>
+        <td>Orders waiting to be processed</td>
+        <td>Select order and assign to washer</td>
+    </tr>
+    <tr>
+        <td style="background-color: #b3e5fc;"><strong>Washers</strong></td>
+        <td>Orders currently being washed</td>
+        <td>Monitor wash cycle; move to dryers when done</td>
+    </tr>
+    <tr>
+        <td style="background-color: #b3e5fc;"><strong>Dryers</strong></td>
+        <td>Orders currently being dried</td>
+        <td>Monitor dry cycle; move to folding when done</td>
+    </tr>
+    <tr>
+        <td style="background-color: #c8e6c9;"><strong>Folding</strong></td>
+        <td>Orders being folded and packaged</td>
+        <td>Fold items; perform quality check</td>
+    </tr>
+    <tr>
+        <td style="background-color: #a5d6a7;"><strong>Completed</strong></td>
+        <td>Orders ready for pickup</td>
+        <td>Assign rack location; notify customer</td>
+    </tr>
+</table>
+
+<h3>6.2 Sorting Options</h3>
+
+<table>
+    <tr>
+        <th>Sort Option</th>
+        <th>Purpose</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td><strong>Order Time</strong></td>
+        <td>Sort by when order was placed</td>
+        <td>First-in-first-out processing</td>
+    </tr>
+    <tr>
+        <td><strong>Due Date</strong></td>
+        <td>Sort by deadline</td>
+        <td>Prioritize orders by urgency</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section7">7. Module 5: Ready/Pickup Management</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Ready/Pickup Management tracks completed orders waiting for customer pickup. Staff can see which orders are ready, their rack locations, and payment status. This module is essential for efficient customer service during pickup.
+</div>
+
+<h3>7.1 Ready Queue</h3>
+
+<h4>7.1.1 List View</h4>
+
+<table>
+    <tr>
+        <th>Column</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>ID</strong></td>
+        <td>Order ID</td>
+        <td>Quick lookup when customer arrives</td>
+    </tr>
+    <tr>
+        <td><strong>Customer</strong></td>
+        <td>Customer name</td>
+        <td>Verify customer identity</td>
+    </tr>
+    <tr>
+        <td><strong>Order</strong></td>
+        <td>Order summary</td>
+        <td>Confirm correct order</td>
+    </tr>
+    <tr>
+        <td><strong>PCS</strong></td>
+        <td>Piece count</td>
+        <td>Verify all pieces are present</td>
+    </tr>
+    <tr>
+        <td><strong>Notes</strong></td>
+        <td>Order notes</td>
+        <td>Special instructions for pickup</td>
+    </tr>
+    <tr>
+        <td><strong>#</strong></td>
+        <td>Rack/location number</td>
+        <td>Find order quickly in storage</td>
+    </tr>
+    <tr>
+        <td><strong>Paid</strong></td>
+        <td>Payment status</td>
+        <td>Collect payment if unpaid</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td>Total amount</td>
+        <td>Amount to collect</td>
+    </tr>
+</table>
+
+<h4>7.1.2 Summary Statistics</h4>
+
+<div class="use-case">
+    <strong>Why Summary Statistics?</strong><br>
+    Summary statistics give managers a quick overview of ready orders. This helps with capacity planning (how much storage space is used) and cash flow (how much is unpaid).
+</div>
+
+<table>
+    <tr>
+        <th>Metric</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Orders count</strong></td>
+        <td>Total orders waiting for pickup</td>
+    </tr>
+    <tr>
+        <td><strong>Pieces count</strong></td>
+        <td>Total pieces in storage</td>
+    </tr>
+    <tr>
+        <td><strong>Value ($)</strong></td>
+        <td>Total value of ready orders</td>
+    </tr>
+    <tr>
+        <td><strong>Unpaid ($)</strong></td>
+        <td>Amount still owed by customers</td>
+    </tr>
+</table>
+
+<h3>7.2 Rack Order Assignment</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Rack assignment organizes completed orders in physical storage. When a customer arrives, staff can quickly locate their order by rack number, reducing wait times and improving customer experience.
+</div>
+
+<p><strong>Rack Orders Modal:</strong></p>
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Order ID input</strong></td>
+        <td>Enter order to assign</td>
+    </tr>
+    <tr>
+        <td><strong>Rack # assignment</strong></td>
+        <td>Specify storage location</td>
+    </tr>
+    <tr>
+        <td><strong>Submit</strong></td>
+        <td>Save rack assignment</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section8">8. Module 6: Search & Filtering</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The Search module enables staff to find specific orders, customers, or payments quickly. This is essential for handling customer inquiries, resolving issues, and accessing historical data.
+</div>
+
+<h3>8.1 Search Types</h3>
+
+<table>
+    <tr>
+        <th>Search Type</th>
+        <th>Available Filters</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>Orders</strong></td>
+        <td>Name, Phone, Email, Address, Route #, Rack #, Order ID, Summary, Notes, Placed After/Before, Cleaned After/Before, Payment Type, Paid After/Before, Order Status, Order Type</td>
+        <td>Customer calls asking about order status; find specific order by any known detail</td>
+    </tr>
+    <tr>
+        <td><strong>Customers</strong></td>
+        <td>Name, Phone, Email, Address, Route #, Notes, Private Notes</td>
+        <td>Look up customer history; verify customer information</td>
+    </tr>
+    <tr>
+        <td><strong>Payments</strong></td>
+        <td>Name, Phone, Email, Address, Order ID, Summary, Notes, Order Status, Placed After/Before, Cleaned After/Before, Payment, Payment Type, Paid After/Before</td>
+        <td>Reconcile payments; find unpaid orders</td>
+    </tr>
+</table>
+
+<h3>8.2 Order Status Options</h3>
+
+<table>
+    <tr>
+        <th>Status</th>
+        <th>Description</th>
+        <th>What It Means</th>
+    </tr>
+    <tr>
+        <td><strong>Detailing</strong></td>
+        <td>Order being detailed</td>
+        <td>Items are being tagged and documented</td>
+    </tr>
+    <tr>
+        <td><strong>Cleaning</strong></td>
+        <td>In cleaning process</td>
+        <td>Items are being washed/dried/processed</td>
+    </tr>
+    <tr>
+        <td><strong>Ready</strong></td>
+        <td>Ready for pickup</td>
+        <td>Cleaning complete; awaiting customer</td>
+    </tr>
+    <tr>
+        <td><strong>Completed</strong></td>
+        <td>Order completed</td>
+        <td>Customer has picked up and paid</td>
+    </tr>
+    <tr>
+        <td><strong>Deadstock</strong></td>
+        <td>Unclaimed order</td>
+        <td>Order not picked up for extended period</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section9">9. Module 7: Invoice & Billing</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The Invoice & Billing module handles business account billing, statement generation, and invoice management. This is essential for B2B customers like hotels, restaurants, and corporate accounts that require formal invoicing.
+</div>
+
+<div class="benefit-box">
+    <strong>Key Benefits:</strong>
+    <ul>
+        <li>Professional invoices for business accounts</li>
+        <li>Automated statement generation</li>
+        <li>Track unpaid invoices</li>
+        <li>Support for recurring billing</li>
+    </ul>
+</div>
+
+<h3>9.1 Invoice Management</h3>
+
+<h4>9.1.1 Invoice List View</h4>
+
+<table>
+    <tr>
+        <th>Column</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>ID</strong></td>
+        <td>Invoice identifier</td>
+        <td>Reference for payments</td>
+    </tr>
+    <tr>
+        <td><strong>Reference</strong></td>
+        <td>Reference number</td>
+        <td>Customer's PO number</td>
+    </tr>
+    <tr>
+        <td><strong>Recipient</strong></td>
+        <td>Customer/Business name</td>
+        <td>Who owes payment</td>
+    </tr>
+    <tr>
+        <td><strong>Date</strong></td>
+        <td>Invoice date</td>
+        <td>When invoice was created</td>
+    </tr>
+    <tr>
+        <td><strong>Due Date</strong></td>
+        <td>Payment due date</td>
+        <td>When payment is expected</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td>Total amount</td>
+        <td>Amount owed</td>
+    </tr>
+    <tr>
+        <td><strong>Status</strong></td>
+        <td>Payment status</td>
+        <td>Paid/Unpaid/Partial</td>
+    </tr>
+    <tr>
+        <td><strong>Sent</strong></td>
+        <td>Send status</td>
+        <td>Whether invoice was emailed</td>
+    </tr>
+</table>
+
+<h3>9.2 New Statement</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Statements provide customers with a summary of their account activity over a period. This is useful for business accounts that need to reconcile their records with yours.
+</div>
+
+<h4>9.2.1 Statement Configuration</h4>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Recipient</strong></td>
+        <td>Customer or Business Account</td>
+        <td>Who receives statement</td>
+    </tr>
+    <tr>
+        <td><strong>From</strong></td>
+        <td>Start date</td>
+        <td>Beginning of statement period</td>
+    </tr>
+    <tr>
+        <td><strong>Until</strong></td>
+        <td>End date</td>
+        <td>End of statement period</td>
+    </tr>
+    <tr>
+        <td><strong>Automatically Email</strong></td>
+        <td>Checkbox option</td>
+        <td>Send statement automatically</td>
+    </tr>
+</table>
+
+<h3>9.3 New Invoice</h3>
+
+<h4>9.3.1 Invoice Types</h4>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>All Unpaid Orders</strong></td>
+        <td>Invoice all unpaid orders</td>
+        <td>Catch up on all outstanding balances</td>
+    </tr>
+    <tr>
+        <td><strong>Monthly</strong></td>
+        <td>Invoice for current month</td>
+        <td>Regular monthly billing cycle</td>
+    </tr>
+    <tr>
+        <td><strong>Custom Date Range</strong></td>
+        <td>Specify date range</td>
+        <td>Invoice for specific period</td>
+    </tr>
+    <tr>
+        <td><strong>Repeating</strong></td>
+        <td>Recurring invoice</td>
+        <td>Automatic monthly invoicing</td>
+    </tr>
+</table>
+
+<h4>9.3.2 Orders Date Options</h4>
+
+<table>
+    <tr>
+        <th>Option</th>
+        <th>Description</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td><strong>Cleaned Date</strong></td>
+        <td>Use date order was cleaned</td>
+        <td>Default; bill when service was performed</td>
+    </tr>
+    <tr>
+        <td><strong>Order Created Date</strong></td>
+        <td>Use date order was placed</td>
+        <td>Bill when order was received</td>
+    </tr>
+    <tr>
+        <td><strong>Order Completed/Delivered Date</strong></td>
+        <td>Use completion date</td>
+        <td>Bill when customer received order</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section10">10. Module 8: Metrics & Reporting</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The Metrics & Reporting module provides comprehensive business analytics. Managers can track sales, monitor performance, identify trends, and make data-driven decisions to grow the business.
+</div>
+
+<div class="benefit-box">
+    <strong>Key Benefits:</strong>
+    <ul>
+        <li>Real-time visibility into business performance</li>
+        <li>Identify top-selling products and services</li>
+        <li>Track staff productivity</li>
+        <li>Monitor customer trends</li>
+        <li>Export data for external analysis</li>
+    </ul>
+</div>
+
+<h3>10.1 Dashboard</h3>
+
+<h4>10.1.1 Today's Summary</h4>
+
+<table>
+    <tr>
+        <th>Metric</th>
+        <th>Description</th>
+        <th>Why It Matters</th>
+    </tr>
+    <tr>
+        <td><strong>Orders</strong></td>
+        <td>Total orders today</td>
+        <td>Track daily volume</td>
+    </tr>
+    <tr>
+        <td><strong>Sales</strong></td>
+        <td>Total sales amount</td>
+        <td>Monitor daily revenue</td>
+    </tr>
+    <tr>
+        <td><strong>Pieces</strong></td>
+        <td>Total pieces processed</td>
+        <td>Measure throughput</td>
+    </tr>
+    <tr>
+        <td><strong>Revenue</strong></td>
+        <td>Revenue generated</td>
+        <td>Track profitability</td>
+    </tr>
+    <tr>
+        <td><strong>Cleaned</strong></td>
+        <td>Orders cleaned count</td>
+        <td>Monitor production</td>
+    </tr>
+    <tr>
+        <td><strong>Completed</strong></td>
+        <td>Completed orders</td>
+        <td>Track fulfillment rate</td>
+    </tr>
+</table>
+
+<h3>10.2 Reports Menu</h3>
+
+<table>
+    <tr>
+        <th>Report Category</th>
+        <th>Sub-reports</th>
+        <th>Business Use</th>
+    </tr>
+    <tr>
+        <td><strong>Dashboard</strong></td>
+        <td>Real-time metrics</td>
+        <td>Quick overview of current performance</td>
+    </tr>
+    <tr>
+        <td><strong>Overview</strong></td>
+        <td>Orders, Pieces, Value, Discounts, Credit, Pay-outs, Paid/Unpaid Orders, Invoices, Revenue Breakdown</td>
+        <td>Comprehensive business health check</td>
+    </tr>
+    <tr>
+        <td><strong>Revenue</strong></td>
+        <td>Daily breakdown, payment methods</td>
+        <td>Track income sources and trends</td>
+    </tr>
+    <tr>
+        <td><strong>Unpaid</strong></td>
+        <td>Unpaid orders and invoices</td>
+        <td>Manage accounts receivable</td>
+    </tr>
+    <tr>
+        <td><strong>Customers</strong></td>
+        <td>Total, new, orders/sales by customer</td>
+        <td>Identify valuable customers</td>
+    </tr>
+    <tr>
+        <td><strong>Top Selling Items</strong></td>
+        <td>Quantity and sales by product</td>
+        <td>Optimize product offerings</td>
+    </tr>
+    <tr>
+        <td><strong>Staff Performance</strong></td>
+        <td>Sales, edits, deletions by staff</td>
+        <td>Evaluate employee productivity</td>
+    </tr>
+    <tr>
+        <td><strong>Popular Times</strong></td>
+        <td>Busy hours and days</td>
+        <td>Optimize staffing schedules</td>
+    </tr>
+    <tr>
+        <td><strong>Washers and Dryers</strong></td>
+        <td>Machine usage statistics</td>
+        <td>Plan maintenance and capacity</td>
+    </tr>
+</table>
+
+<h3>10.3 Export Functionality</h3>
+
+<table>
+    <tr>
+        <th>Export Option</th>
+        <th>Purpose</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>Export to CSV</strong></td>
+        <td>Spreadsheet format</td>
+        <td>Further analysis in Excel</td>
+    </tr>
+    <tr>
+        <td><strong>Export to PDF</strong></td>
+        <td>Document format</td>
+        <td>Share with stakeholders</td>
+    </tr>
+    <tr>
+        <td><strong>Schedule automated reports</strong></td>
+        <td>Regular email delivery</td>
+        <td>Daily/weekly reports to management</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section11">11. Module 9: Product Management</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Product Management allows administrators to configure the product catalog. This includes adding new products, setting prices, managing inventory, and configuring upcharges. Proper product setup ensures accurate pricing and efficient operations.
+</div>
+
+<h3>11.1 Products</h3>
+
+<h4>11.1.1 Product List View</h4>
+
+<table>
+    <tr>
+        <th>Column</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Product</strong></td>
+        <td>Product name</td>
+        <td>Identify product</td>
+    </tr>
+    <tr>
+        <td><strong>Price</strong></td>
+        <td>Base price</td>
+        <td>Standard pricing</td>
+    </tr>
+    <tr>
+        <td><strong>Price Express</strong></td>
+        <td>Express service price</td>
+        <td>Rush service premium</td>
+    </tr>
+    <tr>
+        <td><strong>Pieces</strong></td>
+        <td>Pieces per product</td>
+        <td>Tracking unit</td>
+    </tr>
+    <tr>
+        <td><strong>Active</strong></td>
+        <td>Active status</td>
+        <td>Show/hide in POS</td>
+    </tr>
+    <tr>
+        <td><strong>Online</strong></td>
+        <td>Online availability</td>
+        <td>Available for online ordering</td>
+    </tr>
+</table>
+
+<h3>11.2 Add Product Modal</h3>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Product Name</strong></td>
+        <td>Product identifier</td>
+        <td>Display name in POS</td>
+    </tr>
+    <tr>
+        <td><strong>Section</strong></td>
+        <td>Category selection</td>
+        <td>Group products logically</td>
+    </tr>
+    <tr>
+        <td><strong>Button Image</strong></td>
+        <td>Icon/image selection</td>
+        <td>Visual identification in POS</td>
+    </tr>
+    <tr>
+        <td><strong>Price</strong></td>
+        <td>Base price</td>
+        <td>Standard service price</td>
+    </tr>
+    <tr>
+        <td><strong>Express Price</strong></td>
+        <td>Express service price</td>
+        <td>Premium for rush service</td>
+    </tr>
+    <tr>
+        <td><strong>Cost Price</strong></td>
+        <td>Cost for margin calculation</td>
+        <td>Track profitability</td>
+    </tr>
+    <tr>
+        <td><strong>Minimum Price</strong></td>
+        <td>Price floor</td>
+        <td>Prevent under-pricing</td>
+    </tr>
+    <tr>
+        <td><strong>ID / SKU</strong></td>
+        <td>Product identifier</td>
+        <td>Barcode/inventory tracking</td>
+    </tr>
+    <tr>
+        <td><strong>Tax Exempt</strong></td>
+        <td>Tax exemption checkbox</td>
+        <td>Non-taxable items</td>
+    </tr>
+</table>
+
+<h3>11.3 Upcharges</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Upcharges are additional fees for special services or conditions. For example, extra-large items, heavy stains, or same-day service may warrant additional charges. Upcharges can be percentage-based or fixed amounts.
+</div>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td><strong>Name</strong></td>
+        <td>Upcharge name</td>
+        <td>"Heavy Stain Treatment"</td>
+    </tr>
+    <tr>
+        <td><strong>Apply To</strong></td>
+        <td>Assign to products</td>
+        <td>All WDF products</td>
+    </tr>
+    <tr>
+        <td><strong>Type</strong></td>
+        <td>$ Amount or % Percentage</td>
+        <td>$5 or 10%</td>
+    </tr>
+    <tr>
+        <td><strong>Price</strong></td>
+        <td>Upcharge amount</td>
+        <td>$5.00</td>
+    </tr>
+</table>
+
+<h3>11.4 Item Notes</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Item notes provide predefined tags for documenting item characteristics. This standardizes documentation across staff and speeds up the detailing process.
+</div>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Examples</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Color</strong></td>
+        <td>Beige, Black, Brown, Blue, etc.</td>
+        <td>Identify garment for sorting</td>
+    </tr>
+    <tr>
+        <td><strong>Damage</strong></td>
+        <td>Button Missing, Hole, Tear, etc.</td>
+        <td>Document pre-existing damage</td>
+    </tr>
+    <tr>
+        <td><strong>Stains</strong></td>
+        <td>Coffee, Grease, Ink, etc.</td>
+        <td>Note stains for treatment</td>
+    </tr>
+    <tr>
+        <td><strong>Pattern</strong></td>
+        <td>Striped, Plaid, Solid, etc.</td>
+        <td>Additional identification</td>
+    </tr>
+    <tr>
+        <td><strong>Material</strong></td>
+        <td>Cotton, Silk, Wool, etc.</td>
+        <td>Determine proper treatment</td>
+    </tr>
+</table>
+
+<h3>11.5 Inventory</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Inventory tracking monitors stock levels for retail products. Low stock alerts ensure you never run out of popular items, and barcode integration speeds up checkout.
+</div>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Product</strong></td>
+        <td>Product selection</td>
+        <td>Which product to track</td>
+    </tr>
+    <tr>
+        <td><strong>Stock</strong></td>
+        <td>Current stock amount</td>
+        <td>Know what's available</td>
+    </tr>
+    <tr>
+        <td><strong>Alert Threshold</strong></td>
+        <td>Low stock alert level</td>
+        <td>Get notified when running low</td>
+    </tr>
+    <tr>
+        <td><strong>Barcode Number</strong></td>
+        <td>Product barcode</td>
+        <td>Scan for quick lookup</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section12">12. Module 10: Hardware Integration</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Hardware Integration connects CleanCloud to physical devices like printers, scales, scanners, and payment terminals. Proper hardware setup eliminates manual data entry, reduces errors, and speeds up operations.
+</div>
+
+<h3>12.1 Supported Hardware</h3>
+
+<table>
+    <tr>
+        <th>Hardware Type</th>
+        <th>Configuration Options</th>
+        <th>Business Benefit</th>
+    </tr>
+    <tr>
+        <td><strong>Receipt Printer</strong></td>
+        <td>Manufacturer/Type, Auto Print, Print copies</td>
+        <td>Professional receipts for customers</td>
+    </tr>
+    <tr>
+        <td><strong>Garment Tag Printer</strong></td>
+        <td>Auto Print, Slim tags, Tags per row</td>
+        <td>Track individual garments through process</td>
+    </tr>
+    <tr>
+        <td><strong>Barcode Scanner</strong></td>
+        <td>Scanner configuration</td>
+        <td>Quick product lookup and order retrieval</td>
+    </tr>
+    <tr>
+        <td><strong>Weight Scale</strong></td>
+        <td>Scale integration</td>
+        <td>Automatic weight entry for WDF</td>
+    </tr>
+    <tr>
+        <td><strong>Payment Terminal</strong></td>
+        <td>Payment device integration</td>
+        <td>Secure card processing</td>
+    </tr>
+    <tr>
+        <td><strong>Cash Register</strong></td>
+        <td>Cash drawer integration</td>
+        <td>Automatic drawer opening</td>
+    </tr>
+    <tr>
+        <td><strong>Customer Facing Screen</strong></td>
+        <td>Display configuration</td>
+        <td>Show order details to customer</td>
+    </tr>
+</table>
+
+<h3>12.2 Receipt Printer Configuration</h3>
+
+<table>
+    <tr>
+        <th>Setting</th>
+        <th>Options</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Auto Print Receipt</strong></td>
+        <td>Yes/No</td>
+        <td>Automatically print after order</td>
+    </tr>
+    <tr>
+        <td><strong>Receipt for New Order</strong></td>
+        <td>Customer copy, DC copy</td>
+        <td>What to print for new orders</td>
+    </tr>
+    <tr>
+        <td><strong>Print Summary on Batch</strong></td>
+        <td>Toggle</td>
+        <td>Summary when paying multiple orders</td>
+    </tr>
+</table>
+
+<h3>12.3 Customer Facing Screen</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The customer facing screen displays order information to customers during checkout. It can also show promotional messages and collect digital signatures for release forms.
+</div>
+
+<table>
+    <tr>
+        <th>Setting</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Active</strong></td>
+        <td>Enable/disable screen</td>
+        <td>Turn feature on/off</td>
+    </tr>
+    <tr>
+        <td><strong>Dark Mode</strong></td>
+        <td>Dark theme toggle</td>
+        <td>Reduce eye strain</td>
+    </tr>
+    <tr>
+        <td><strong>Custom Message</strong></td>
+        <td>e.g., "Thank you!"</td>
+        <td>Brand messaging</td>
+    </tr>
+    <tr>
+        <td><strong>Sign Release Forms</strong></td>
+        <td>Toggle</td>
+        <td>Digital signature capture</td>
+    </tr>
+    <tr>
+        <td><strong>Review Promo</strong></td>
+        <td>Toggle</td>
+        <td>Ask for reviews</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section13">13. Module 11: User Management</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    User Management controls who can access the system and what they can do. Proper user setup ensures security, accountability, and appropriate access levels for different roles.
+</div>
+
+<div class="benefit-box">
+    <strong>Key Benefits:</strong>
+    <ul>
+        <li>Secure access control</li>
+        <li>Track who did what (audit trail)</li>
+        <li>Manage staff schedules and payroll</li>
+        <li>Role-based permissions</li>
+    </ul>
+</div>
+
+<h3>13.1 User Accounts</h3>
+
+<table>
+    <tr>
+        <th>Column</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Name</strong></td>
+        <td>Staff member name</td>
+        <td>Identify user</td>
+    </tr>
+    <tr>
+        <td><strong>Access Mode</strong></td>
+        <td>Admin/Store Only/etc.</td>
+        <td>Permission level</td>
+    </tr>
+</table>
+
+<h3>13.2 Add User Modal</h3>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Name</strong></td>
+        <td>User full name</td>
+        <td>Identification</td>
+    </tr>
+    <tr>
+        <td><strong>Email</strong></td>
+        <td>User email</td>
+        <td>Login credential</td>
+    </tr>
+    <tr>
+        <td><strong>Password</strong></td>
+        <td>Account password</td>
+        <td>Security</td>
+    </tr>
+    <tr>
+        <td><strong>Access Mode</strong></td>
+        <td>Store Only, Admin, etc.</td>
+        <td>Permission level</td>
+    </tr>
+    <tr>
+        <td><strong>Quick PIN</strong></td>
+        <td>Quick access PIN</td>
+        <td>Fast login at POS</td>
+    </tr>
+    <tr>
+        <td><strong>Hourly Wage</strong></td>
+        <td>Hourly pay rate</td>
+        <td>Payroll calculation</td>
+    </tr>
+    <tr>
+        <td><strong>Role</strong></td>
+        <td>Custom role assignment</td>
+        <td>Granular permissions</td>
+    </tr>
+</table>
+
+<h4>13.2.1 Permissions</h4>
+
+<table>
+    <tr>
+        <th>Permission</th>
+        <th>Description</th>
+        <th>Who Needs It</th>
+    </tr>
+    <tr>
+        <td><strong>Edit Orders</strong></td>
+        <td>Modify existing orders</td>
+        <td>Most staff</td>
+    </tr>
+    <tr>
+        <td><strong>Edit Completed Orders</strong></td>
+        <td>Modify after completion</td>
+        <td>Managers only</td>
+    </tr>
+    <tr>
+        <td><strong>Edit Paid Orders</strong></td>
+        <td>Modify after payment</td>
+        <td>Managers only</td>
+    </tr>
+    <tr>
+        <td><strong>Edit Price List</strong></td>
+        <td>Change pricing</td>
+        <td>Owners/Admins only</td>
+    </tr>
+</table>
+
+<h3>13.3 User Reports</h3>
+
+<table>
+    <tr>
+        <th>Report</th>
+        <th>Description</th>
+        <th>Use Case</th>
+    </tr>
+    <tr>
+        <td><strong>View Hours</strong></td>
+        <td>Staff time tracking</td>
+        <td>Verify hours worked</td>
+    </tr>
+    <tr>
+        <td><strong>User Edits</strong></td>
+        <td>Edit history</td>
+        <td>Audit trail for changes</td>
+    </tr>
+    <tr>
+        <td><strong>Deletions</strong></td>
+        <td>Deletion audit trail</td>
+        <td>Track deleted orders</td>
+    </tr>
+    <tr>
+        <td><strong>View Logins</strong></td>
+        <td>Login history</td>
+        <td>Security monitoring</td>
+    </tr>
+    <tr>
+        <td><strong>Payroll</strong></td>
+        <td>Payroll management</td>
+        <td>Calculate wages</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section14">14. Module 12: Marketing</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    The Marketing module helps businesses attract and retain customers through various channels. From building a website to sending promotional campaigns, these tools drive customer engagement and revenue growth.
+</div>
+
+<h3>14.1 Marketing Features</h3>
+
+<table>
+    <tr>
+        <th>Feature</th>
+        <th>Description</th>
+        <th>Business Benefit</th>
+    </tr>
+    <tr>
+        <td><strong>Website Builder</strong></td>
+        <td>Custom branded website</td>
+        <td>Online presence without developer costs</td>
+    </tr>
+    <tr>
+        <td><strong>Google Business Profile</strong></td>
+        <td>"Book Now" button integration</td>
+        <td>Capture customers searching locally</td>
+    </tr>
+    <tr>
+        <td><strong>Email, SMS & Push</strong></td>
+        <td>Multi-channel campaigns</td>
+        <td>Reach customers on preferred channel</td>
+    </tr>
+    <tr>
+        <td><strong>Automated Flows</strong></td>
+        <td>Automated customer engagement</td>
+        <td>Welcome series, win-back campaigns</td>
+    </tr>
+    <tr>
+        <td><strong>5-Star Reviews</strong></td>
+        <td>Review request automation</td>
+        <td>Build online reputation</td>
+    </tr>
+    <tr>
+        <td><strong>AI Agent</strong></td>
+        <td>24/7 chatbot for website</td>
+        <td>Answer questions when you're closed</td>
+    </tr>
+</table>
+
+<h3>14.2 Advertising Tracking</h3>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Advertising tracking measures the effectiveness of marketing campaigns. By tracking which campaigns bring in customers and orders, you can optimize marketing spend.
+</div>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Description</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Source</strong></td>
+        <td>Campaign source</td>
+        <td>Where customer came from (Google, Facebook)</td>
+    </tr>
+    <tr>
+        <td><strong>Campaign</strong></td>
+        <td>Campaign name</td>
+        <td>Which specific campaign</td>
+    </tr>
+    <tr>
+        <td><strong>Medium</strong></td>
+        <td>Marketing medium</td>
+        <td>Email, SMS, paid ad, etc.</td>
+    </tr>
+    <tr>
+        <td><strong>Customer Signed Up</strong></td>
+        <td>Date range</td>
+        <td>When customers joined</td>
+    </tr>
+    <tr>
+        <td><strong>Orders Created</strong></td>
+        <td>Date range</td>
+        <td>Revenue from campaign</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 id="section15">15. System Flow Diagrams</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Flow diagrams visualize how orders and data move through the system. These diagrams help staff understand the overall process and identify where bottlenecks may occur.
+</div>
+
+<h3>15.1 Order Processing Flow</h3>
+
+<table style="width: 100%; text-align: center;">
+    <tr><td style="background-color: #e3f2fd; padding: 15px; border-radius: 5px;"><strong>New Order Creation</strong><br><em>Customer drops off items</em></td></tr>
+    <tr><td>↓</td></tr>
+    <tr><td style="background-color: #e3f2fd; padding: 15px; border-radius: 5px;"><strong>Select Items</strong><br><em>Choose WDF/Retail/Household/Subscription</em></td></tr>
+    <tr><td>↓</td></tr>
+    <tr><td style="background-color: #e3f2fd; padding: 15px; border-radius: 5px;"><strong>Add Detailing</strong><br><em>Document colors, damage, stains</em></td></tr>
+    <tr><td>↓</td></tr>
+    <tr><td style="background-color: #e3f2fd; padding: 15px; border-radius: 5px;"><strong>Select Customer</strong><br><em>Find existing or create new</em></td></tr>
+    <tr><td>↓</td></tr>
+    <tr><td style="background-color: #e3f2fd; padding: 15px; border-radius: 5px;"><strong>Set Ready Date & Payment</strong><br><em>When will it be ready? Pay now or later?</em></td></tr>
+    <tr><td>↓</td></tr>
+    <tr><td style="background-color: #e3f2fd; padding: 15px; border-radius: 5px;"><strong>Submit Order</strong><br><em>Print receipt, notify customer</em></td></tr>
+    <tr><td>↓</td></tr>
+    <tr><td style="background-color: #c8e6c9; padding: 15px; border-radius: 5px;"><strong>Order in Cleaning Queue</strong><br><em>Ready for processing</em></td></tr>
+</table>
+
+<h3>15.2 Cleaning Workflow</h3>
+
+<table style="width: 100%; text-align: center;">
+    <tr>
+        <td style="background-color: #ffecb3; padding: 15px; border-radius: 5px; width: 18%;"><strong>To-Do</strong><br><em>Orders Queue</em></td>
+        <td style="width: 2%;">→</td>
+        <td style="background-color: #b3e5fc; padding: 15px; border-radius: 5px; width: 18%;"><strong>Washers</strong><br><em>Washing</em></td>
+        <td style="width: 2%;">→</td>
+        <td style="background-color: #b3e5fc; padding: 15px; border-radius: 5px; width: 18%;"><strong>Dryers</strong><br><em>Drying</em></td>
+        <td style="width: 2%;">→</td>
+        <td style="background-color: #c8e6c9; padding: 15px; border-radius: 5px; width: 18%;"><strong>Folding</strong><br><em>Final Prep</em></td>
+        <td style="width: 2%;">→</td>
+        <td style="background-color: #a5d6a7; padding: 15px; border-radius: 5px; width: 18%;"><strong>Completed</strong><br><em>Ready</em></td>
+    </tr>
+</table>
+
+<h3>15.3 Interactive Diagrams (FigJam Links)</h3>
+<ul>
+    <li><a href="https://www.figma.com/online-whiteboard/create-diagram/b186e585-70d8-4739-b32d-e1925b27c68a">Order Processing Flow Diagram</a></li>
+    <li><a href="https://www.figma.com/online-whiteboard/create-diagram/efbb757e-ea46-4e22-82c1-9c824a1a9456">Cleaning Workflow Diagram</a></li>
+    <li><a href="https://www.figma.com/online-whiteboard/create-diagram/0f9d876d-ffc4-4403-989d-a21b717cee1b">System Architecture Diagram</a></li>
+    <li><a href="https://www.figma.com/online-whiteboard/create-diagram/72b5b11f-5b8b-47e6-8338-dfc9c0d894f6">Payment Processing Flow Diagram</a></li>
+    <li><a href="https://www.figma.com/online-whiteboard/create-diagram/0caa36f6-f3ff-4247-a870-b81f54b2fea1">User Roles and Permissions Diagram</a></li>
+</ul>
+
+<hr>
+
+<h2 id="section16">16. Technical Requirements</h2>
+
+<div class="description-box">
+    <strong>Purpose:</strong><br>
+    Technical requirements outline what's needed to run CleanCloud effectively. This includes browser compatibility, hardware requirements, and available integrations.
+</div>
+
+<h3>16.1 Platform Requirements</h3>
+
+<table>
+    <tr>
+        <th>Component</th>
+        <th>Requirement</th>
+        <th>Notes</th>
+    </tr>
+    <tr>
+        <td><strong>Web Browser</strong></td>
+        <td>Chrome, Firefox, Safari, Edge</td>
+        <td>Latest versions recommended</td>
+    </tr>
+    <tr>
+        <td><strong>Internet</strong></td>
+        <td>Stable connection required</td>
+        <td>Cloud-based system</td>
+    </tr>
+    <tr>
+        <td><strong>Device</strong></td>
+        <td>Desktop, Tablet, or POS Terminal</td>
+        <td>Touch-friendly interface</td>
+    </tr>
+</table>
+
+<h3>16.2 Integration Capabilities</h3>
+
+<div class="use-case">
+    <strong>Why Integrations Matter:</strong><br>
+    Integrations connect CleanCloud with other business tools you already use. This eliminates double-entry, syncs data automatically, and extends functionality.
+</div>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Integrations</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td><strong>Accounting</strong></td>
+        <td>QuickBooks, Xero</td>
+        <td>Sync financial data</td>
+    </tr>
+    <tr>
+        <td><strong>Delivery</strong></td>
+        <td>DoorDash, Uber</td>
+        <td>Delivery service integration</td>
+    </tr>
+    <tr>
+        <td><strong>Marketing</strong></td>
+        <td>Active Campaign, Google</td>
+        <td>Marketing automation</td>
+    </tr>
+    <tr>
+        <td><strong>Payroll</strong></td>
+        <td>Gusto</td>
+        <td>Staff payroll processing</td>
+    </tr>
+    <tr>
+        <td><strong>Machines</strong></td>
+        <td>Speed Queen, Huebsch, FasCard</td>
+        <td>Machine monitoring</td>
+    </tr>
+    <tr>
+        <td><strong>Payments</strong></td>
+        <td>PayRange, Tangerpay, LaundryCard</td>
+        <td>Payment processing</td>
+    </tr>
+</table>
+
+<h3>16.3 Security Features</h3>
+
+<table>
+    <tr>
+        <th>Feature</th>
+        <th>Description</th>
+        <th>Benefit</th>
+    </tr>
+    <tr>
+        <td><strong>Role-based access</strong></td>
+        <td>Permissions by role</td>
+        <td>Limit access to sensitive features</td>
+    </tr>
+    <tr>
+        <td><strong>Quick PIN</strong></td>
+        <td>Fast authentication</td>
+        <td>Secure but convenient login</td>
+    </tr>
+    <tr>
+        <td><strong>Audit trail</strong></td>
+        <td>Track all changes</td>
+        <td>Accountability and compliance</td>
+    </tr>
+    <tr>
+        <td><strong>Login history</strong></td>
+        <td>Track access</td>
+        <td>Security monitoring</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Appendix A: Glossary</h2>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+        <th>Context</th>
+    </tr>
+    <tr>
+        <td><strong>WDF</strong></td>
+        <td>Wash, Dry, Fold</td>
+        <td>Basic laundry service priced by weight</td>
+    </tr>
+    <tr>
+        <td><strong>POS</strong></td>
+        <td>Point of Sale</td>
+        <td>Checkout system for processing orders</td>
+    </tr>
+    <tr>
+        <td><strong>Express</strong></td>
+        <td>Priority service</td>
+        <td>Rush orders with premium pricing</td>
+    </tr>
+    <tr>
+        <td><strong>Upcharge</strong></td>
+        <td>Additional fee</td>
+        <td>Extra charge for special services</td>
+    </tr>
+    <tr>
+        <td><strong>Heat Seal</strong></td>
+        <td>Permanent tag</td>
+        <td>Garment identification system</td>
+    </tr>
+    <tr>
+        <td><strong>Rack Orders</strong></td>
+        <td>Storage system</td>
+        <td>Organized location for ready orders</td>
+    </tr>
+    <tr>
+        <td><strong>Deadstock</strong></td>
+        <td>Unclaimed orders</td>
+        <td>Orders not picked up for extended period</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Appendix B: User Roles</h2>
+
+<table>
+    <tr>
+        <th>Role</th>
+        <th>Permissions</th>
+        <th>Typical User</th>
+    </tr>
+    <tr>
+        <td><strong>Admin</strong></td>
+        <td>Full system access</td>
+        <td>Owner, General Manager</td>
+    </tr>
+    <tr>
+        <td><strong>Store Only</strong></td>
+        <td>POS and basic operations</td>
+        <td>Front desk staff</td>
+    </tr>
+    <tr>
+        <td><strong>Custom</strong></td>
+        <td>Configurable permissions</td>
+        <td>Specialized roles</td>
+    </tr>
+    <tr>
+        <td><strong>Driver</strong></td>
+        <td>Pickup/delivery access</td>
+        <td>Delivery drivers</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>Document Revision History</h2>
+
+<table>
+    <tr>
+        <th>Version</th>
+        <th>Date</th>
+        <th>Author</th>
+        <th>Changes</th>
+    </tr>
+    <tr>
+        <td>1.0</td>
+        <td>Feb 19, 2026</td>
+        <td>PM Team</td>
+        <td>Initial documentation</td>
+    </tr>
+    <tr>
+        <td>1.1</td>
+        <td>Feb 19, 2026</td>
+        <td>PM Team</td>
+        <td>Added detailed descriptions and use cases for all features</td>
+    </tr>
+</table>
+
+<hr>
+
+<p><em>This document is based on analysis of CleanCloud POS system screenshots and website information. For implementation, additional technical specifications may be required.</em></p>
+
+</body>
+</html>
